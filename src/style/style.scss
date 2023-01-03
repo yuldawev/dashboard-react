@@ -1,6 +1,7 @@
+@import url("bootstrap/dist/css/bootstrap.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;&display=swap");
 
-/* ------ROOT VARAIBLES------ */
+/* ------ROOT VARIABLES------ */
 
 :root {
   --color-primary: #7380ec;
@@ -24,7 +25,7 @@
   --cadr-padding: 1.8rem;
   --padding-1: 1.2rem;
 
-  --box-shadow: 0 2rem 3rem varvar(--color-light);
+  --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
 .dark-theme-variables {
@@ -55,7 +56,7 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: poppins, sans-serif;
-  font-size: 0.88;
+  font-size: 0.88rem;
   background: var(--color-background);
   user-select: none;
   overflow-x: hidden;
@@ -63,7 +64,7 @@ body {
 }
 
 .container {
-  display: flex;
+  display: grid;
   width: 96%;
   margin: 0 auto;
   gap: 1.8rem;
@@ -80,7 +81,7 @@ h1 {
 }
 
 h2 {
-  padding: 3px 45px 3px 0px;
+  padding: 3px 45px 3px 0;
   font-size: 1.4rem;
 }
 
@@ -110,6 +111,7 @@ small {
 .text-muted {
   color: var(--color-info-dark);
 }
+
 p {
   color: var(--color-dark-variant);
 }
@@ -121,12 +123,15 @@ b {
 .primary {
   color: var(--color-primary);
 }
+
 .danger {
   color: var(--color-danger);
 }
+
 .success {
   color: var(--color-success);
 }
+
 .warning {
   color: var(--color-warninng);
 }
@@ -150,6 +155,7 @@ aside .logo img {
   width: 2rem;
   height: 2rem;
 }
+
 aside .close {
   display: flex;
 }
@@ -177,6 +183,7 @@ aside .sidebar a {
   align-items: center;
   position: relative;
   height: 3.7rem;
+  text-decoration: none;
   transition: all 300ms ease;
 }
 
@@ -242,12 +249,13 @@ main .insights {
   display: flex;
   flex-direction: row;
 }
+
 main .insights > .sales {
   margin: 5px 5px 30px;
 }
 
 main .insights > .sales .left {
-  margin: 0px 20px;
+  margin: 0 20px;
 }
 
 main .insights > .expenses {
@@ -265,9 +273,11 @@ main .insights > div {
   margin-top: 1rem;
   box-shadow: var(--box-shadow);
 }
+
 main .insights > div :hover {
   box-shadow: none;
 }
+
 main .insights > div div {
   margin: 0;
   width: 100px;
@@ -368,6 +378,7 @@ main table tbody td {
   border-bottom: 1px solid var(--color-light);
   color: var(--color-dark-variant);
 }
+
 main table tbody tr:last-child td {
   border: none;
 }
@@ -378,6 +389,7 @@ main .resent-orders a {
   margin: 1rem auto;
   color: var(--color-primary);
 }
+
 .profile-photo img {
   width: 40px;
   height: 40px;
@@ -387,7 +399,7 @@ main .resent-orders a {
 /* -------------------- right ----------------------------- */
 
 .right {
-  margin: 1rem, 4rem;
+  margin: 1rem 4rem;
 }
 
 .op {
@@ -409,8 +421,8 @@ main .resent-orders a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4, 2rem;
-  width: 1, 6rem;
+  height: 4.2rem;
+  width: 1.6rem;
   cursor: pointer;
   border-radius: var(--border-radius-1);
 }
@@ -441,14 +453,6 @@ main .resent-orders a {
 /* --------------------RESENT ---- UPDATES ---------------- */
 
 .right .resent-updates {
-  margin-top: 1rem;
-}
-
-.right .resent-updates {
-  margin-bottom: 0.8rem;
-}
-
-.right .resent-updates .resent-updates {
   background: var(--color-white);
   padding: var(--cadr-padding);
   border-radius: var(--card-border-radius);
@@ -456,16 +460,17 @@ main .resent-orders a {
   transition: all 300ms ease;
 }
 
-.right .resent-updates .resent-updates:hover {
+.right .resent-updates:hover {
   box-shadow: none;
 }
 
-.right .resent-updates .resent-updates .update {
+.right .resent-updates .update {
   display: grid;
   grid-template-columns: 2.6rem auto;
   gap: 1rem;
   margin-bottom: 1rem;
 }
+
 /*----------------SALES --- ANALIYTICS --------------*/
 
 .right .sales-analiytics {
@@ -487,7 +492,7 @@ main .resent-orders a {
   box-shadow: var(--box-shadow);
 }
 
-.right .updat {
+.right .update {
   gap: 5px;
   display: flex;
 }
@@ -497,8 +502,7 @@ main .resent-orders a {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 5px;
-  margin-bottom: 0.7rem;
+  margin: 5px 5px 0.7rem;
   padding: 1.4rem var(--cadr-padding);
   border-radius: var(--border-radius-3);
   box-shadow: var(--box-shadow);
@@ -557,6 +561,7 @@ main .resent-orders a {
 .right .sales-analiytics .add-product div h3 {
   font-weight: 600;
 }
+
 /* -----------------------media --- queries ------------------------ */
 
 @media screen and (max-width: 1200px) {
@@ -564,7 +569,7 @@ main .resent-orders a {
     width: 94%;
     grid-template-columns: 1fr;
   }
-  x aside {
+  aside {
     position: fixed;
     left: -100%;
     background: var(--color-danger);
@@ -628,7 +633,8 @@ main .resent-orders a {
     display: none;
   }
 }
-/* 
+
+/*
 ---------------------MEDIA --- QUERY -------------------------- */
 
 @media screen and (max-width: 768px) {
@@ -662,7 +668,7 @@ main .resent-orders a {
 
   aside .sidebar a {
     width: 100px;
-    height: 3, 4rem;
+    height: 3.4rem;
   }
 
   aside .sidebar a:last-child {
