@@ -1,4 +1,5 @@
-import {Route, Routes} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import Layout from "./layout";
 import Dashboard from "./views/dashboard";
 import Customer from "./views/customer";
@@ -13,22 +14,29 @@ import Logout from "./views/Logout";
 import "./style/style.scss";
 
 const App = () => {
-    return (
-        <Routes>
-            <Route path="/" element={<Layout/>}>
-                <Route index element={<Dashboard/>}/>
-                <Route path="customer" element={<Customer/>}/>
-                <Route path="orders" element={<Orders/>}/>
-                <Route path="analytics" element={<Analytics/>}/>
-                <Route path="message" element={<Message/>}/>
-                <Route path="products" element={<Products/>}/>
-                <Route path="reports" element={<Reports/>}/>
-                <Route path="settings" element={<Settings/>}/>
-                <Route path="add_product" element={<AddProduct/>}/>
-                <Route path="logout" element={<Logout/>}/>
-            </Route>
-        </Routes>
-    );
+ 
+
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Layout/>
+        }
+      >
+        <Route index element={<Dashboard />} />
+        <Route path="customer" element={<Customer />} />
+        <Route path="orders" element={<Orders />} />
+        <Route path="analytics" element={<Analytics />} />
+        <Route path="message" element={<Message />} />
+        <Route path="products" element={<Products />} />
+        <Route path="reports" element={<Reports />} />
+        <Route path="settings" element={<Settings />} />
+        <Route path="add_product" element={<AddProduct />} />
+        <Route path="logout" element={<Logout />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default App;

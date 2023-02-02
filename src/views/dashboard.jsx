@@ -1,89 +1,101 @@
 import {Container} from "react-bootstrap";
+import Insights from "../components/insights";
+import {MdAnalytics, MdStackedLineChart} from "react-icons/md"
 
 const Dashboard = () => {
     return (
         <Container>
-            <main>
-                <h1>Dashboard</h1>
-                <div className="date">
-                    <input type="date"/>
-                </div>
+        <main>
+        <h1>Dashboard</h1>
 
-                <div className="insights">
-                    <div className="sales">
-                        <span className="material-icons-sharp">analytics</span>
-                        <div className="middle">
-                            <div className="left">
-                                <h3>Total Sales</h3>
-                                <h1>$25,024</h1>
-                            </div>
-                            <div className="progress">
-                                <svg>
-                                    <circle cx="38" cy="38" r="36"></circle>
-                                </svg>
-                                <div className="rumber">
-                                    <p>81%</p>
-                                </div>
-                            </div>
-                        </div>
-                        <small className="text-muted">Lest 24 Hours</small>
-                    </div>
+        <div className="date">
+            <input type="date" name="" id=""/>
+        </div>
 
-                    <div className="expenses">
-                        <span className="material-icons-sharp">bar_chart</span>
-                        <div className="middle">
-                            <div className="left">
-                                <h3>Total Expenses</h3>
-                                <h1>$14,160</h1>
-                            </div>
-                            <div className="progress">
-                                <svg>
-                                    <circle cx="38" by="38" r="38"></circle>
-                                </svg>
-                                <div className="rumber">
-                                    <p>62%</p>
-                                </div>
-                            </div>
-                        </div>
-                        <small className="text-muted">Lest 24 Hours</small>
-                    </div>
+        <div className="insights">
+           
+        <Insights
+        type="sales"
+        icon={MdAnalytics}
+        text="Total Sales"
+        number="$25,024"
+        percent={81}
+        time="Last 24 Hours"
+        />
 
-                    <div className="income">
-                        <span className="material-icons-sharp">stacked_line_chart</span>
-                        <div className="middle">
-                            <div className="left">
-                                <h3>Total Icone</h3>
-                                <h1>$10,864</h1>
-                            </div>
-                            <div className="progress">
-                                <svg>
-                                    <circle cx="38" cy="38" r="38"></circle>
-                                </svg>
-                                <div className="rumber">
-                                    <p>44%</p>
-                                </div>
-                            </div>
-                        </div>
-                        <small className="text-muted">Lest 24 Hours</small>
-                    </div>
-                </div>
-                <div className="resent-orders">
-                    <h2>Resent-Order</h2>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Product Number</th>
-                            <th>Payment</th>
-                            <th>Status</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                    <a href="#">Show All</a>
-                </div>
-            </main>
+        <Insights
+        type="expenses"
+        icon={MdAnalytics}
+        text="Total Sales"
+        number="$25,024"
+        percent={62}
+        time="Last 24 Hours"
+        />
+
+        <Insights
+        type="income"
+        icon={MdStackedLineChart}
+        text="Total Sales"
+        number="$10,024"
+        percent={44}
+        time="Last 24 Hours"
+        />
+        </div>
+
+        <div className="recent-orders">
+            <h2>Recent Orders</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Number</th>
+                    <th>Payment</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>Foldable Mini Drone</td>
+                    <td>85631</td>
+                    <td>Due</td>
+                    <td>Pending</td>
+                    <td className="primary">Detail</td>
+                </tr>
+                <tr>
+                    <td>Foldable Mini Drone</td>
+                    <td>85631</td>
+                    <td>Due</td>
+                    <td>Pending</td>
+                    <td className="primary">Detail</td>
+                </tr>
+                <tr>
+                    <td>Foldable Mini Drone</td>
+                    <td>85631</td>
+                    <td>Due</td>
+                    <td>Pending</td>
+                    <td className="primary">Detail</td>
+                </tr>
+                <tr>
+                    <td>Foldable Mini Drone</td>
+                    <td>85631</td>
+                    <td>Due</td>
+                    <td>Pending</td>
+                    <td className="primary">Detail</td>
+                </tr>
+                <tr>
+                    <td>Foldable Mini Drone</td>
+                    <td>85631</td>
+                    <td>Due</td>
+                    <td>Pending</td>
+                    <td className="primary">Detail</td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="#">Show All</a>
+        </div>
+    </main>
         </Container>
     );
 };

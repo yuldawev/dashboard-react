@@ -1,86 +1,64 @@
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
-    MdAdd,
-    MdClose,
-    MdGridView,
-    MdInsights,
-    MdInventory,
-    MdLogout,
-    MdMailOutline,
-    MdPersonOutline,
-    MdReceiptLong,
-    MdReportGmailerrorred,
-    MdSettings
+  MdAdd,
+  MdClose,
+  MdGridView,
+  MdInsights,
+  MdInventory,
+  MdLogout,
+  MdMailOutline,
+  MdPersonOutline,
+  MdReceiptLong,
+  MdReportGmailerrorred,
+  MdSettings,
 } from "react-icons/md";
 import Logo from "../assets/images/logo.png";
 import NavItem from "../components/NavItem";
+import { useConfig } from "../contexts/configContexts";
 
 const Navbar = () => {
-    return (
-        <aside>
-            <div className="top">
-                <div className="logo">
-                    <img src={Logo} alt="MEGATOR"/>
-                    <h2 className="text-muted">
-                        MEGA
-                        <div className="danger">TOR</div>
-                    </h2>
-                </div>
+  const { isMenuOpen, setIsMenuOpen } = useConfig();
+  return (
+    <aside className={isMenuOpen ? "show" : ""}>
+      <div className="top">
+        <div className="brand">
+          <img src={Logo} />
+          <h2>
+            UNI<span className="danger">VER</span>SAL
+          </h2>
+        </div>
+        <button className="close" onClick={() => setIsMenuOpen(false)}>
+          <MdClose/>
+        </button>
+      </div>
+      <div className="sidebar">
+        <NavItem icon={MdGridView} title="Dashboard" to="/" />
 
-                <button className="close">
-                    <div><MdClose/></div>
-                </button>
-            </div>
+        <NavItem icon={MdPersonOutline} title="Customers" to="/customer" />
 
-            <div className="sidebar">
-                <NavItem to="/" icon={MdGridView} title="Dashboard"/>
+        <NavItem icon={MdReceiptLong} title="Orders" to="/orders" />
 
-                <NavLink to="/customer">
-                    <div><MdPersonOutline/></div>
-                    <h3>Customers</h3>
-                </NavLink>
+        <NavItem icon={MdInsights} title="Analytics" to="/analytics" />
 
-                <NavLink to="/orders">
-                    <div><MdReceiptLong/></div>
-                    <h3>Orders</h3>
-                </NavLink>
+        <NavItem
+          icon={MdMailOutline}
+          title="Message"
+          count="26"
+          to="/message"
+        />
 
-                <NavLink to="/analytics">
-                    <div><MdInsights/></div>
-                    <h3>Analytics</h3>
-                </NavLink>
+        <NavItem icon={MdInventory} title="Products" to="/products" />
 
-                <NavItem to="/message" icon={MdMailOutline} title="Messages" count={26}/>
+        <NavItem icon={MdReportGmailerrorred} title="Reports" to="/reports" />
 
-                <NavLink to="/products">
-                    <div><MdInventory/></div>
-                    <h3>Products</h3>
-                </NavLink>
+        <NavItem icon={MdSettings} title="Settings" to="/settings" />
 
-                <NavLink to="/reports">
-                    <div><MdReportGmailerrorred/></div>
-                    <h3>Reports</h3>
-                </NavLink>
+        <NavItem icon={MdAdd} title="Add Products" to="/add_product" />
 
-                <NavLink to="/settings">
-                    <div><MdSettings/></div>
-                    <h3>Settings</h3>
-                </NavLink>
-
-                <NavLink to="/add_product">
-                    <div><MdAdd/></div>
-                    <h3>Add Product</h3>
-                </NavLink>
-
-                <div className="logout">
-                    <NavLink to="/logout">
-                        <div><MdLogout/></div>
-                        <h3>Logout</h3>
-                    </NavLink>
-                </div>
-            </div>
-        </aside>
-    );
+        <NavItem icon={MdLogout} title="Logout" to="/logout" />
+      </div>
+    </aside>
+  );
 };
 
 export default Navbar;
