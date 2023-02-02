@@ -4,7 +4,7 @@ import {
   MdLightMode,
   MdLocalMall,
   MdMenu,
-  MdPerson,
+  MdShoppingBag,
   MdShoppingCart,
 } from "react-icons/md";
 import RecentUpdate from "../components/Notification";

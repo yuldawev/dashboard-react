@@ -1,3 +1,4 @@
+
 const Item = ({icon, time, text, number, percent, type}) => {
  
     const Icon = icon
@@ -20,7 +21,5 @@ const Item = ({icon, time, text, number, percent, type}) => {
 </div>
   );
 
- 
 };
-
 export default Item;
